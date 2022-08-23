@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="logo.png" alt="Project logo"></a>
+ <img width=200px height=200px src="https://user-images.githubusercontent.com/83460816/186146785-5aa5403b-9dfb-4bdb-80b5-0d0e4f79dd55.PNG" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Django REST API</h3>
