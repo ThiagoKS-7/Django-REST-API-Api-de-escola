@@ -6,7 +6,7 @@ class Aluno(models.Model):
     rg = models.CharField(max_length=10)
     cpf = models.CharField(max_length=15)
     idade = models.IntegerField()
-    dt_nasc = models.DateField(null=True, blank=True)
+    dt_nasc = models.DateField()
 
     def __str__(self):
         return self.nome
