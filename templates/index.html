@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Django REST API</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav
+    style="background-color: #343a40!important; display:flex; justify-content: space-between; align-items: center; height:50px">
+    <span style="font-size: 25px; color:white; font-weight: bold; margin-left:25px">Django REST API</span>
+  </nav>
+
+  <div class="jumbotron text-center">
+    <h1>Alura - Django REST API</h1>
+    <p>Exemplo de API Django com Documentação Swagger e Redoc!</p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Django Admin</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <a class="btn btn-secondary" href="/admin" role="button"><span class="details">View details »</span></a>
+      </div>
+      <div class="col-sm-4">
+        <h3>Swagger</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <a class="btn btn-secondary" href="/swagger" role="button"><span class="details">View details »</span></a>
+      </div>
+      <div class="col-sm-4">
+        <h3>Redoc</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <a class="btn btn-secondary" href="/redoc" role="button"><span class="details">View details »</span></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<style>
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+  .btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+  }
+
+  .details {
+    font-size: 17px;
+    font-weight: 500;
+  }
+</style>
