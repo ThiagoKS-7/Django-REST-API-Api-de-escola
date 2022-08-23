@@ -4,12 +4,13 @@ from drf_yasg import openapi
 from django.contrib import admin
 from django.urls import re_path, path
 from escola.views import alunos, index
+from demo.views import SendEmail
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Snippets API",
+        title="Django School REST API",
         default_version="v1",
-        description="Test description",
+        description="Curso introdutório de REST API da Alura",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="thiagokasper101@gmail.com"),
         license=openapi.License(name="BSD License"),
@@ -21,6 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
     path("alunos/", alunos, name="alunos"),
+    path("email-demo/", SendEmail.as_view(), name="email"),
 ]
 urlpatterns += [
     re_path(
