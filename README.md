@@ -8,8 +8,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/ThiagoKS-7/Django-REST.svg)](https://github.com/ThiagoKS-7/Django-REST/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/ThiagoKS-7/Django-REST.svg)](https://github.com/ThiagoKS-7/Django-REST/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/ThiagoKS-7/Django-REST-API---Api-de-escola.svg)](https://github.com//ThiagoKS-7/Django-REST-API---Api-de-escola/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/ThiagoKS-7/Django-REST-API---Api-de-escola.svg)](https://github.com/ThiagoKS-7/Django-REST-API---Api-de-escola/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
