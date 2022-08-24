@@ -2,9 +2,9 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.contrib import admin
-from django.urls import re_path, path
-from escola.views import AlunosList, index, api
-from demo.views import SendEmail
+from django.urls import re_path, path, include
+from escola.views import index, api
+from email_sender.views import SendEmail
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -22,8 +22,8 @@ BASE_URL = "api/v1/"
 urlpatterns = [
     path("", index, name="index"),
     path(BASE_URL, api, name="api"),
-    path(BASE_URL + "alunos/", AlunosList.as_view(), name="alunos"),
-    path(BASE_URL + "email-demo/", SendEmail.as_view(), name="email"),
+    path(BASE_URL + "alunos/", include("escola.urls")),
+    path(BASE_URL + "email/", SendEmail.as_view(), name="email"),
     path("admin/", admin.site.urls),
 ]
 urlpatterns += [
