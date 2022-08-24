@@ -22,7 +22,7 @@ BASE_URL = "api/v1/"
 urlpatterns = [
     path("", index, name="index"),
     path(BASE_URL, api, name="api"),
-    path(BASE_URL + "alunos/", include("escola.urls")),
+    path(BASE_URL + "escola/", include("escola.urls")),
     path(BASE_URL + "email/", SendEmail.as_view(), name="email"),
     path("admin/", admin.site.urls),
 ]
