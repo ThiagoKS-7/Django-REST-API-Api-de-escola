@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> A simple Django REST API, using Swagger e Redoc
     <br> 
 </p>
 
@@ -34,11 +34,11 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Essa API segue como base a estrutura da aula introdutória sobre REST API's de Django da Alura, com algumas edições na configuração de banco e com a adição de uma documentação Swagger/Redoc.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+Here you can the how to install this system on your machine and the prerequisites to run it.
 
 ### Prerequisites
 
@@ -47,33 +47,20 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+https://github.com/ThiagoKS-7/Django-REST-API---Api-de-escola.git
+cd Django-REST-API---Api-de-escola
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser --username="admin" --email=""
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
 Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
