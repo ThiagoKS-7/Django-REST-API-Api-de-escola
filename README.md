@@ -56,6 +56,19 @@ python manage.py migrate
 python manage.py createsuperuser --username="admin" --email=""
 ```
 
+<!--https://myaccount.google.com/u/7/apppasswords -->
+
+Configurar email
+
+```
+- Criar email;
+- ir na Google Accounts;
+- Ativar 2-step verification;
+- Pesquisar por app passwords;
+- criar arquivo .env com base no .env-example;
+- Gerar password para colocar no EMAIL_HOST_PASSWORD do .env
+```
+
 ## 🎈 Usage <a name="usage"></a>
 
 Add notes about how to use the system.
