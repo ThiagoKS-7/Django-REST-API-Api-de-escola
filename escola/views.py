@@ -1,12 +1,21 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import AlunoSerializer
+from escola.models import Aluno
+from rest_framework.status import HTTP_200_OK
 
 
 def index(request):
+    return redirect("api")
+
+
+def api(request):
     return render(request, "index.html")
 
 
-def alunos(request):
-    if request.method == "GET":
-        alunos_list = {"id": 1, "Nome": "Thiago", "Sobrenome": "Kasper", "Idade": "20"}
-        return JsonResponse(alunos_list)
+class AlunosList(APIView):
+    def get(self, request, format=None):
+        Alunos = Aluno.objects.all()
+        serializer = AlunoSerializer(Alunos, many=True)  # o many é True qnd for lista
+        return Response(serializer.data, status=HTTP_200_OK)
