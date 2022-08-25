@@ -9,7 +9,8 @@ from .serializers import (
 from escola.models import Aluno, Curso, Matricula
 from rest_framework import viewsets, generics
 from rest_framework.filters import SearchFilter
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.authentication import BasicAuthentication
 
 
 def index(request):
@@ -25,7 +26,8 @@ class AlunoViewSet(viewsets.ModelViewSet):
 
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
-    permission_classes = (AllowAny,)
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
     filter_backends = (SearchFilter,)
     # faz com que o get traga com ?search='pesquisa', comparando com esses campos
     search_fields = ("nome", "cpf")
@@ -36,7 +38,8 @@ class CursoViewSet(viewsets.ModelViewSet):
 
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
-    permission_classes = (AllowAny,)
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
     filter_backends = (SearchFilter,)
     search_fields = ("descricao", "nivel")
 
@@ -46,7 +49,8 @@ class MatriculaViewSet(viewsets.ModelViewSet):
 
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
-    permission_classes = (AllowAny,)
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
 class ListaMatriculasAluno(generics.ListAPIView):
@@ -57,17 +61,21 @@ class ListaMatriculasAluno(generics.ListAPIView):
         return queryset
 
     serializer_class = ListaMatriculasAlunoSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
 class ListaAlunosCurso(generics.ListAPIView):
     """Listando alunas e alunos por curso"""
+
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         queryset = Matricula.objects.filter(curso_id=self.kwargs["pk"])
         return queryset
 
     serializer_class = ListaAlunosCursoSerializer
-    
 
 
 """
