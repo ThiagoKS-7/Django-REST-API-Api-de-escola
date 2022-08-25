@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect
-from .serializers import AlunoSerializer, CursoSerializer, MatriculaSerializer
+from .serializers import (
+    AlunoSerializer,
+    CursoSerializer,
+    MatriculaSerializer,
+    ListaMatriculasAlunoSerializer,
+)
 from escola.models import Aluno, Curso, Matricula
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework.filters import SearchFilter
 from rest_framework.permissions import AllowAny
 
@@ -15,6 +20,8 @@ def api(request):
 
 
 class AlunoViewSet(viewsets.ModelViewSet):
+    """Exibindo todos os alunos e alunas"""
+
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
     permission_classes = (AllowAny,)
@@ -24,6 +31,8 @@ class AlunoViewSet(viewsets.ModelViewSet):
 
 
 class CursoViewSet(viewsets.ModelViewSet):
+    """Exibindo todos os cursos"""
+
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
     permission_classes = (AllowAny,)
@@ -32,9 +41,21 @@ class CursoViewSet(viewsets.ModelViewSet):
 
 
 class MatriculaViewSet(viewsets.ModelViewSet):
+    """Listando todas as matrículas"""
+
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
     permission_classes = (AllowAny,)
+
+
+class ListaMatriculasAluno(generics.ListAPIView):
+    """Listando todas as matrículas de cada aluna e aluno"""
+
+    def get_queryset(self):
+        queryset = Matricula.objects.filter(aluno_id=self.kwargs["pk"])
+        return queryset
+
+    serializer_class = ListaMatriculasAlunoSerializer
 
 
 """
