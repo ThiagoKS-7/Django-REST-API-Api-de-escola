@@ -32,3 +32,15 @@ class MatriculaSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return super().create(validated_data)
+
+
+class ListaMatriculasAlunoSerializer(serializers.ModelSerializer):
+    curso = serializers.ReadOnlyField(source="curso.descricao")
+    periodo = serializers.SerializerMethodField()  # faz retornar a partir de um método
+
+    class Meta:
+        model = Matricula
+        fields = ("curso", "periodo")
+
+    def get_periodo(self, obj):
+        return obj.get_periodo_display()
